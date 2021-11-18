@@ -1,6 +1,6 @@
 
 <h1>enter quantity of array and array</h1>
-<%= form_tag("/perfect/output" , :method => "get") do %>
+<%= form_tag("/perfect/output" , :method => "get" , remote: true) do %>
     <div class="row">
         <div class="col-3"> <%= label_tag("Number n:") %> </div>
         <div class="col-9"> <%= text_field_tag(:p1) %> </div>
@@ -11,4 +11,6 @@
     </div>
     <br/><br/>
     <%= submit_tag("Proceed !") %>
+
+<div id = "result">
     <% end %>
