@@ -1,0 +1,14 @@
+
+<h1>enter quantity of array and array</h1>
+<%= form_tag("/perfect/output" , :method => "get") do %>
+    <div class="row">
+        <div class="col-3"> <%= label_tag("Number n:") %> </div>
+        <div class="col-9"> <%= text_field_tag(:p1) %> </div>
+    </div>
+    <div class="row">
+        <div class="col-3"> <%= label_tag("enter your array:") %> </div>
+        <div class="col-9"> <%= text_field_tag(:p2) %> </div>
+    </div>
+    <br/><br/>
+    <%= submit_tag("Proceed !") %>
+    <% end %>

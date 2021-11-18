@@ -1,0 +1,55 @@
+<style>
+  div.result_table table, div.result_table th, div.result_table td, div.result_table tr{
+    border: 1px solid white;
+    text-align: center;
+    color: white;
+    background-color: black;
+  }
+  div.result_table th{
+    width: 10%;
+    border: 1px solid white;
+    text-align: center;
+    color: white;
+  }
+</style>
+<% if @a == 0 %>
+    <h1>invalid input !<h1>
+<% else %>
+<h1>given array: </h1>
+    <%= @arr1 %> <br/><br/>
+<hr>
+<% if @parr.size == 0 %> 
+    <%='no result !' %>
+<% else %>
+    <div class ="row">
+        <div class ="col-4">
+            <h3>number of arrays made of perfect number: </h3>
+            <%= @parr.size %> <br/><br/>
+        </div>
+        <div class ="col-8">
+            <div class="result_table">
+                <table>
+                    <tr>
+                        <td rowspan = <%= @parr.size %> >array</td>
+                        <td> <%= @parr[0] %> </td>
+                    </tr>
+                    <% for i in 1...@parr.size do%>
+                        <tr> <td> <%= @parr[i] %> </td> </tr>
+                    <% end %>
+                    <tr>
+                        <td>the longest array</td>
+                        <td> 
+                            <% for i in 0...@parr.size do %>
+                                <% if @parr[i].size == @max %>
+                                    <%= @parr[i]%>
+                                    <br/>
+                                <% end %>
+                            <% end %>
+                        </td>
+                </table>
+            </div>
+        </div> 
+    </div>
+<% end %>
+<% end %>
+<%= link_to "back", :perfect_input %>
